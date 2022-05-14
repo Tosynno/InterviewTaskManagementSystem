@@ -1,0 +1,150 @@
+{
+  "Routes": [
+    //Onboarding API
+    {
+      "DownstreamPathTemplate": "/api/v1/Onboarding",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "Onboarding.api",
+          "Port": "7248"
+        }
+      ],
+      "UpstreamPathTemplate": "/Onboarding",
+      "UpstreamHttpMethod": [ "GET", "POST" ],
+
+      //Caching
+      "FileCacheOptions": {
+        "TtlSeconds": 30
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/api/v1/Onboarding/VerifyEmail/{Email}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "Onboarding.api",
+          "Port": "7248"
+        }
+      ],
+      "UpstreamPathTemplate": "/Onboarding/VerifyEmail/{Email}",
+      "UpstreamHttpMethod": [ "GET" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/v1/Onboarding/VerifyPhone/{Phone}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "Onboarding.api",
+          "Port": "7248"
+        }
+      ],
+      "UpstreamPathTemplate": "/Onboarding/VerifyPhone/{Phone}",
+      "UpstreamHttpMethod": [ "GET" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/v1/Onboarding/GetAllOnboarding",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "Onboarding.api",
+          "Port": "7248"
+        }
+      ],
+      "UpstreamPathTemplate": "/Onboarding/GetAllOnboarding",
+      "UpstreamHttpMethod": [ "GET" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/v1/Onboarding/GetOnboardingByEmail/{Email}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "Onboarding.api",
+          "Port": "7248"
+        }
+      ],
+      "UpstreamPathTemplate": "/Onboarding/GetOnboardingByEmail/{Email}",
+      "UpstreamHttpMethod": [ "GET" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/v1/Onboarding/GetOnboardingByPhone/{Phone}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "Onboarding.api",
+          "Port": "7248"
+        }
+      ],
+      "UpstreamPathTemplate": "/Onboarding/GetOnboardingByPhone/{Phone}",
+      "UpstreamHttpMethod": [ "GET" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/v1/Onboarding/SignIn/{Email}/{Password}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "Onboarding.api",
+          "Port": "7248"
+        }
+      ],
+      "UpstreamPathTemplate": "/Onboarding/SignIn/{Email}/{Password}",
+      "UpstreamHttpMethod": [ "GET" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/v1/Onboarding/Onboarding",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "Onboarding.api",
+          "Port": "7248"
+        }
+      ],
+      "UpstreamPathTemplate": "/Onboarding/Onboarding",
+      "UpstreamHttpMethod": [ "POST" ]
+    },
+
+
+
+
+    //Banks API
+    {
+      "DownstreamPathTemplate": "/api/v1/User/ShowAssignAllTaskByUser",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "7240"
+        }
+      ],
+      "UpstreamPathTemplate": "/User/ShowAssignAllTaskByUser",
+      "UpstreamHttpMethod": [ "GET" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/v1/User/AcceptAssignTaskByUser",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "7240"
+        }
+      ],
+      "UpstreamPathTemplate": "/User/AcceptAssignTaskByUser",
+      "UpstreamHttpMethod": [ "POST" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/v1/User/CompleteAssignTaskByUser",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "7240"
+        }
+      ],
+      "UpstreamPathTemplate": "/User/CompleteAssignTaskByUser",
+      "UpstreamHttpMethod": [ "POST" ]
+    }
+  ],
+  "GlobalConfiguration": {
+    "BaseUrl": "https://localhost:7035"
+  }
+}
